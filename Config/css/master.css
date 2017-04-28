@@ -1,0 +1,27 @@
+.jumbotron{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: #eee;
+    background-color: rgba(51, 122, 183, 0.36);
+    background-position: center;
+ 
+    background-image: url('/MasterG/imgs/header.png');
+    background-position: center;
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */ 
+   
+}
+
+.jumbotron .h1, .jumbotron h1 {
+    color: #eee;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #ccc;
+    color: #eee;
+}
+
+.navbar-default {
+    background-color: #080808;
+    border-color: #337ab7;
+}
