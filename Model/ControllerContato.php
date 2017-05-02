@@ -1,22 +1,10 @@
 <?php  
-$host = "localhost";
-$bd = "masterg";
-$user = "root";
-$pass = "";
-
-$conexao = mysqli_connect($host,$user,$pass);
-
-$banco = mysqli_select_db($conexao, $bd);
-
-if(!$conexao){
-    echo "Conexão com banco de dados Falhou";
-}
-
+include_once("config.inc.php");
 $nome = $_POST['nome'];
 $email = $_POST['email'];
 $telefone = $_POST['telefone'];
 $assunto = $_POST['assunto'];
-$mensagem = $_POST['telefone'];
+$mensagem = $_POST['mensagem'];
 
 $sql = "INSERT INTO  contatos(nome, email, telefone, assunto, mensagem) VALUES 
 ('$nome', '$email', '$telefone', '$assunto','$mensagem')";
