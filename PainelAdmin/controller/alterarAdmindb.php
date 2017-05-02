@@ -1,4 +1,5 @@
 <?php
+header("content-type: text/html; charset=utf-8");
 require_once("class/protect.php");
 $id = $_POST['id'];
 $nome = $_POST['nome'];

@@ -1,4 +1,6 @@
-<?php require_once("class/protect.php"); ?>
+<?php 
+header("content-type: text/html; charset=utf-8");
+require_once("class/protect.php"); ?>
 <div class="row">
     <div class="container">
         <form action="?pg=controller/inserirAdmindb" method="post">

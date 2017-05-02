@@ -1,16 +1,5 @@
 <?php
-$host = "localhost";
-$bd = "masterg";
-$user = "root";
-$pass = "";
-
-$conexao = mysqli_connect($host,$user,$pass);
-
-$banco = mysqli_select_db($conexao, $bd);
-
-if(!$conexao){
-    echo "Conexão com banco de dados Falhou";
-}
+include_once("Model/config.inc.php");
 $sql = "SELECT * FROM galeria";
 $busca = mysqli_query($conexao, $sql);   
 ?>

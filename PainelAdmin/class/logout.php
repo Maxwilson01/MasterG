@@ -1,4 +1,5 @@
 <?php
+header("content-type: text/html; charset=utf-8");
 session_start();
 unset($_SESSION[user_logado]);
 session_destroy();

@@ -1,16 +1,5 @@
 <?php
-$host = "localhost";
-$bd = "masterg";
-$user = "root";
-$pass = "";
-
-$conexao = mysqli_connect($host,$user,$pass);
-
-$banco = mysqli_select_db($conexao, $bd);
-
-if(!$conexao){
-    echo "Conexão com banco de dados Falhou";
-}
+include_once("Model/config.inc.php");
 $sql = "SELECT * FROM postagem";
 $busca = mysqli_query($conexao, $sql);
 echo"
@@ -27,11 +16,7 @@ $videoMP = "<video width='320' height='240' controls><source src='$urlvid' type=
     <div class="col-lg-4 col-md-3 text-center">
       <div class="service-box">
          <h3><?=$dados['titulo'];?></h3>
-         <!--<video width="320" height="240" controls>
-            <source src="http://ns.ibxk.com.br/clickjogos/2017/02/24/24222058036002.mp4" type="video/mp4">
-            </video>-->
           <img src=<?=$dados['img'];?> class="img-rounded" alt="Cinque Terre" width="304" height="236">
-
             <p><?=$dados['subtitulo'];?></p><br/>
             <p>Autor: <?=$dados['autor'];?> </p>
             <p class="text-muted"><?=$dados['texto'];?></p>
@@ -39,7 +24,6 @@ $videoMP = "<video width='320' height='240' controls><source src='$urlvid' type=
             if ($dados['video'] == !null) {
               echo $videoMP;  
             }     
-            
         ?>
       </div>
   </div>
