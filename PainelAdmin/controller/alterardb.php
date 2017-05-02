@@ -1,14 +1,16 @@
 <?php
+require_once("class/protect.php");
+$id = $_POST['id'];
+$titulo = $_POST['titulo'];
+$subtitulo = $_POST['subtitulo'];
+$img = $_POST['img'];
+$texto =  $_POST['texto'];
+$autor = $_POST['autor'];
+$video = $_POST['video'];
 
-$id =           $_POST['id'];
-$titulo =       $_POST['titulo'];
-$subtitulo =    $_POST['subtitulo'];
-$texto =        $_POST['texto'];
+$sql2 = mysqli_query($conexao, "SELECT * FROM postagem WHERE id='$id'");
 
-
-$sql2 = mysqli_query($conexao, "SELECT * FROM admin WHERE id='$id'");
-
-$sql = "UPDATE admin SET titulo='$titulo', subtitulo='$subtitulo', texto='$texto' WHERE id=$id";
+$sql = "UPDATE postagem SET titulo='$titulo', subtitulo='$subtitulo',img='$img',  texto='$texto', autor='$autor', video='$video' WHERE id=$id";
 $altera = mysqli_query($conexao, $sql);
 
 if(!$altera){

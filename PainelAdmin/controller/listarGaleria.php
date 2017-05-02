@@ -14,7 +14,7 @@ location.href = aURL;
 </script>
 <?php
 
-$busca = "Select * from postagem order by id";
+$busca = "Select * from galeria order by idg";
 
 $todos = mysqli_query($conexao, $busca);?>
 <div class="container">
@@ -24,24 +24,21 @@ $todos = mysqli_query($conexao, $busca);?>
             <tr>
                 <td style="width: 60px;">ID:</td>
                 <td style="width: 205px;">Titulo:</td>
-                <td style="width: 105px;">Subtitulo:</td>
-                <td style="width: 105px;">Imagem URL:</td>
                 <td style="width: 105px;">Autor:</td>
-                <td style="width: 105px;">Alterar</td>
-                <td style="width: 105px;">Excluir</td>
+                <td style="width: 105px;">Imagem:</td>
+                <td style="width: 100px;">Alterar:</td>
+                <td style="width: 105px;">Excluir:</td>
              </tr>
     <?php while ($dados=mysqli_fetch_array($todos)) {?>
     <div>
         <tr>
-            <td><?=$dados['id'];?></td>
+            <td><?=$dados['idg'];?></td>
             <td><?=$dados['titulo'];?></td>
-            <td><?=$dados['subtitulo'];?></td>
-            <td><?=$dados['img'];?></td>
             <td><?=$dados['autor'];?></td>
-            <td><a href="?pg=controller/alterar&id=<?=$dados['id']; ?>" class="btn btn-default" role="button">Alterar</a></td>
-            
-            <td><a href="javascript:confirmaExclusao('?pg=controller/excluirdb&id=<?=$dados['id']; ?>')" class="btn btn-warning" role="button">Excluir</a></td>
-            
+            <td><?=$dados['img'];?></td>
+             <td><a href="?pg=controller/alterarGaleria&id=<?=$dados['idg']; ?>" class="btn btn-default" role="button">Alterar</a></td>
+
+            <td><br><a href="javascript:confirmaExclusao('?pg=controller/excluirGaleria&id=<?=$dados['idg']; ?>')" class="btn btn-warning" role="button">Excluir</a></td>
         </tr>
     </div>  
              <?php } ?>

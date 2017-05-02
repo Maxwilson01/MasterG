@@ -3,7 +3,7 @@
     $conexao = mysqli_connect("localhost","root","");
 
     // conectando ao BD criado
-    $db = mysqli_select_db($conexao, "meusite1");
+    $db = mysqli_select_db($conexao, "masterg");
     
     // Executando query e retornando valores da tabela "faleconosco"
     $query = mysqli_query($conexao, "SELECT * FROM faleconosco");

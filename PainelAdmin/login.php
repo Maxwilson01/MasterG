@@ -11,6 +11,7 @@ if(isset($_POST['login'])){
 
   // Captação de dados
     $senha = $_POST['password'];
+    //md5($senha);
     $_SESSION['email'] = $mysqli->escape_string($_POST['email']);
 
     // Validação de dados
@@ -29,17 +30,18 @@ if(isset($_POST['login'])){
         $dado = $que->fetch_assoc();
         
         if($que->num_rows == 0)
-            $erro[] = "Nenhum usuário possui o <strong>e-mail</strong> informado.";
+            $erro[] = "Nenhum usuário possui o <strong>e-mail</strong> informado ou <strong>senha</strong> incorreta.";
 
-        elseif(strcmp($dado[senha], ($senha)) == 0){
-            $_SESSION[user_logado] = $dado[valor];
+        elseif(strcmp($dado['senha'], ($senha)) == 0){
+            $_SESSION['user_logado'] = $dado['valor'];
         }else
-            $erro[] = "<strong>Senha</strong> incorreta.";
+            $erro[] = "<strong>Senha ou login</strong> incorreta.";
 
         if(count($erro) == 0){
             echo "<script>location.href='/MasterG/PainelAdmin/';</script>";
             exit();
             unset($_SESSION['email']);
+
         }
 
     }
@@ -62,6 +64,7 @@ if(isset($_POST['login'])){
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/config.css" rel="stylesheet">
 
 
     <!-- Custom CSS -->
@@ -77,13 +80,15 @@ if(isset($_POST['login'])){
 
 </head>
 <body>
+<div class="rowLogin">
+    
 
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4 text-center">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Login</h3>
+                        <h3 class="panel-title">Painel Admin - Login</h3>
                     </div>
                     <div class="panel-body">
                         <?php 
@@ -118,7 +123,7 @@ if(isset($_POST['login'])){
         </div>
     </div>
 
-
+</div>
 </body>
 
 </html>

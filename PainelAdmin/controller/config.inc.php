@@ -1,7 +1,7 @@
 <?php
-
+require_once("class/protect.php");
 $host = "localhost";
-$bd = "meusite1";
+$bd = "masterg";
 $user = "root";
 $pass = "";
 

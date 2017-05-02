@@ -1,6 +1,6 @@
 <?php
+require_once("class/protect.php");
 include "controller/config.inc.php";
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -21,13 +21,6 @@ include "controller/config.inc.php";
     <!-- Custom CSS -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
 
 <body>
@@ -46,22 +39,28 @@ include "controller/config.inc.php";
                     <a href="index.php">Home</a>
                 </li>
                 <li>
-                    <a href="?pg=controller/listar">Listar</a>
-                </li>
-                <li>
-                    <a href="?pg=controller/inserir">Inserir Novo</a>
-                </li>
-                <li>
-                    <a href="#">Excluir</a>
-                </li>
-                <li>
-                    <a href="?pg=controller/alterar">Alterar banco</a>
-                </li>
-                <li>
-                    <a href="#">Cadastrar Admin</a>
+                    <a href="?pg=controller/listar">Alterar/Excluir - Site</a>
                 </li>
                 <li>
                     <a href="?pg=controller/inserir">Inserir no Site</a>
+                </li>
+                <li>
+                    <a href="?pg=controller/listarContatos">Listar/Exluir - Contatos</a>
+                </li>
+                <li>
+                    <a href="?pg=controller/inserirGaleria">Inserir Galeria</a>
+                </li>
+                <li>
+                    <a href="?pg=controller/listarGaleria">Listar/Excluir - Galeria</a>
+                </li>
+                <li>
+                    <a href="?pg=controller/inserirAdmin">Cadastrar Admin</a>
+                </li>
+                <li>
+                    <a href="?pg=controller/listarAdmin">Administradores</a>
+                </li>
+                <li>
+                    <a href="?pg=class/logout">Sair</a>
                 </li>
             </ul>
         </div>
